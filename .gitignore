@@ -1,0 +1,7 @@
+scrapling-src/
+*.png
+site-dump.html
+hero-dump.html
+seed-dump.html
+*-dump.html
+site-original.css

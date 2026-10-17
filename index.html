@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="color-scheme" content="dark">
+  <title>Alex Mercer — Creative Developer &amp; Designer</title>
+  <meta name="description" content="Creative developer and designer building immersive digital experiences. Available for freelance projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cursor" aria-hidden="true"><div id="cursor-dot"></div></div>
+
+<!-- Noise overlay -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- Left rail nav -->
+<nav class="rail" id="rail" aria-label="Sections">
+  <div class="rail-top"><span class="hud-label ink-dim">FOLIO</span></div>
+  <ol class="rail-stages">
+    <span class="rail-line" aria-hidden="true"></span>
+    <li><a href="#work"     class="rail-link" data-stage="0"><span class="rail-diamond"></span><span class="hud-label rail-label">WORK</span></a></li>
+    <li><a href="#about"    class="rail-link" data-stage="1"><span class="rail-diamond"></span><span class="hud-label rail-label ink-dim">ABOUT</span></a></li>
+    <li><a href="#skills"   class="rail-link" data-stage="2"><span class="rail-diamond"></span><span class="hud-label rail-label ink-dim">SKILLS</span></a></li>
+    <li><a href="#process"  class="rail-link" data-stage="3"><span class="rail-diamond"></span><span class="hud-label rail-label ink-dim">PROCESS</span></a></li>
+    <li><a href="#services" class="rail-link" data-stage="4"><span class="rail-diamond"></span><span class="hud-label rail-label ink-dim">SERVICES</span></a></li>
+    <li><a href="#contact"  class="rail-link" data-stage="5"><span class="rail-diamond"></span><span class="hud-label rail-label ink-dim">CONTACT</span></a></li>
+  </ol>
+  <div class="rail-bottom">
+    <span class="hud-label tabular ink-dim" id="rail-counter">01/06</span>
+  </div>
+</nav>
+
+<!-- Mobile progress bar -->
+<div class="mobile-prog" aria-hidden="true"><div class="mobile-prog-fill" id="mob-fill"></div></div>
+
+<!-- Status ticker (top right) -->
+<div class="status-bar" aria-hidden="true">
+  <span class="hud-label ink-dim">STATUS</span>
+  <span class="status-dot"></span>
+  <span class="hud-label" style="color:var(--accent-green)">AVAILABLE FOR WORK</span>
+  <span class="hud-label ink-dim" style="margin-left:1.5rem">2026</span>
+</div>
+
+<main id="main">
+
+<!-- ═══════════════════════ HERO ═══════════════════════════════ -->
+<section id="hero" class="sec sec-hero">
+  <div class="grid-field" aria-hidden="true"></div>
+  <div class="sec-wash sec-wash-hero" aria-hidden="true"></div>
+
+  <!-- Intro overlay -->
+  <div class="intro-overlay" id="intro" aria-hidden="true">
+    <div class="intro-text">
+      <p class="intro-word">
+        <span class="intro-half" id="il">CREATIVE</span>
+        <span class="intro-half" id="ir">DEVELOPER</span>
+      </p>
+      <p class="intro-panth" id="ip">ALEX MERCER</p>
+    </div>
+  </div>
+
+  <div class="hero-block container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="stage-rule h-rule" aria-hidden="true"></span>
+        <div class="hero-eyebrow" id="hero-eyebrow">
+          <span class="hud-label ink-dim">CREATIVE DEVELOPER</span>
+          <span class="hud-label ink-dim">·</span>
+          <span class="hud-label ink-dim">BASED IN NEW YORK</span>
+        </div>
+        <h1 class="hero-headline display" id="hero-h1">
+          <span class="mask"><span class="line">Building</span></span>
+          <span class="mask"><span class="line">experiences</span></span>
+          <span class="mask"><span class="line">people</span></span>
+          <span class="mask"><span class="line">remember.</span></span>
+        </h1>
+        <p class="hero-body font-mono" id="hero-body">
+          I design and code immersive digital products — from interactive
+          3D websites to design systems and brand identities. Currently
+          open to new projects.
+        </p>
+        <div class="hero-cta" id="hero-cta">
+          <a href="#work" class="btn btn-primary magnetic">View my work</a>
+          <a href="#contact" class="btn btn-ghost magnetic">Let's talk</a>
+        </div>
+      </div>
+      <div class="hero-right" id="hero-right">
+        <!-- Crystal orb SVG (retained from original) -->
+        <svg viewBox="-120 -120 240 240" class="hero-orb" id="hero-orb" aria-hidden="true">
+          <defs>
+            <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffb03d"/>
+              <stop offset="46%" stop-color="var(--seed-a)"/>
+              <stop offset="100%" stop-color="var(--seed-b)"/>
+            </linearGradient>
+            <radialGradient id="cgr" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="var(--seed-a)" stop-opacity=".34"/>
+              <stop offset="52%"  stop-color="var(--seed-b)" stop-opacity=".14"/>
+              <stop offset="100%" stop-color="var(--seed-b)" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="0" cy="0" r="118" fill="url(#cgr)"/>
+          <g><polygon points="-48.86,-98.51 -37.38,-91.88 -48.86,-85.26 -60.34,-91.88" fill="url(#cg)"/><polygon points="-37.38,-91.88 -48.86,-85.26 -48.86,-72.0 -37.38,-78.63" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="-60.34,-91.88 -48.86,-85.26 -48.86,-72.0 -60.34,-78.63" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="-48.86,-98.51 -37.38,-91.88 -37.38,-78.63 -48.86,-72.0 -60.34,-78.63 -60.34,-91.88" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="63.27,-101.0 70.31,-96.93 63.27,-92.87 56.23,-96.93" fill="url(#cg)"/><polygon points="70.31,-96.93 63.27,-92.87 63.27,-84.74 70.31,-88.8" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="56.23,-96.93 63.27,-92.87 63.27,-84.74 56.23,-88.8" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="63.27,-101.0 70.31,-96.93 70.31,-88.8 63.27,-84.74 56.23,-88.8 56.23,-96.93" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="45.06,-96.12 56.53,-89.5 45.06,-82.88 33.6,-89.5" fill="url(#cg)"/><polygon points="56.53,-89.5 45.06,-82.88 45.06,-69.64 56.53,-76.26" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="33.6,-89.5 45.06,-82.88 45.06,-69.64 33.6,-76.26" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="45.06,-96.12 56.53,-89.5 56.53,-76.26 45.06,-69.64 33.6,-76.26 33.6,-89.5" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="-7.05,-74.15 10.82,-63.83 -7.05,-53.51 -24.91,-63.83" fill="url(#cg)"/><polygon points="10.82,-63.83 -7.05,-53.51 -7.05,-32.88 10.82,-43.2" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="-24.91,-63.83 -7.05,-53.51 -7.05,-32.88 -24.91,-43.2" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="-7.05,-74.15 10.82,-63.83 10.82,-43.2 -7.05,-32.88 -24.91,-43.2 -24.91,-63.83" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="50.14,-74.62 61.72,-67.93 50.14,-61.25 38.56,-67.93" fill="url(#cg)"/><polygon points="61.72,-67.93 50.14,-61.25 50.14,-47.88 61.72,-54.56" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="38.56,-67.93 50.14,-61.25 50.14,-47.88 38.56,-54.56" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="50.14,-74.62 61.72,-67.93 61.72,-54.56 50.14,-47.88 38.56,-54.56 38.56,-67.93" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="61.33,-84.13 79.67,-73.55 61.33,-62.96 43.0,-73.55" fill="url(#cg)"/><polygon points="79.67,-73.55 61.33,-62.96 61.33,-41.79 79.67,-52.38" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="43.0,-73.55 61.33,-62.96 61.33,-41.79 43.0,-52.38" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="61.33,-84.13 79.67,-73.55 79.67,-52.38 61.33,-41.79 43.0,-52.38 43.0,-73.55" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="39.58,-58.51 61.15,-46.06 39.58,-33.6 18.01,-46.06" fill="url(#cg)"/><polygon points="61.15,-46.06 39.58,-33.6 39.58,-8.7 61.15,-21.15" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="18.01,-46.06 39.58,-33.6 39.58,-8.7 18.01,-21.15" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="39.58,-58.51 61.15,-46.06 61.15,-21.15 39.58,-8.7 18.01,-21.15 18.01,-46.06" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="-10.27,-39.89 0.73,-33.54 -10.27,-27.18 -21.28,-33.54" fill="url(#cg)"/><polygon points="0.73,-33.54 -10.27,-27.18 -10.27,-14.48 0.73,-20.83" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="-21.28,-33.54 -10.27,-27.18 -10.27,-14.48 -21.28,-20.83" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="-10.27,-39.89 0.73,-33.54 0.73,-20.83 -10.27,-14.48 -21.28,-20.83 -21.28,-33.54" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="11.43,-10.4 24.41,-2.91 11.43,4.59 -1.55,-2.91" fill="url(#cg)"/><polygon points="24.41,-2.91 11.43,4.59 11.43,19.57 24.41,12.08" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="-1.55,-2.91 11.43,4.59 11.43,19.57 -1.55,12.08" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="11.43,-10.4 24.41,-2.91 24.41,12.08 11.43,19.57 -1.55,12.08 -1.55,-2.91" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="-31.56,8.23 -12.12,19.46 -31.56,30.69 -51.01,19.46" fill="url(#cg)"/><polygon points="-12.12,19.46 -31.56,30.69 -31.56,53.14 -12.12,41.91" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="-51.01,19.46 -31.56,30.69 -31.56,53.14 -51.01,41.91" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="-31.56,8.23 -12.12,19.46 -12.12,41.91 -31.56,53.14 -51.01,41.91 -51.01,19.46" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="-2.3,9.96 15.22,20.07 -2.3,30.19 -19.81,20.07" fill="url(#cg)"/><polygon points="15.22,20.07 -2.3,30.19 -2.3,50.41 15.22,40.3" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="-19.81,20.07 -2.3,30.19 -2.3,50.41 -19.81,40.3" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="-2.3,9.96 15.22,20.07 15.22,40.3 -2.3,50.41 -19.81,40.3 -19.81,20.07" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="30.59,18.39 44.0,26.13 30.59,33.87 17.19,26.13" fill="url(#cg)"/><polygon points="44.0,26.13 30.59,33.87 30.59,49.35 44.0,41.61" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="17.19,26.13 30.59,33.87 30.59,49.35 17.19,41.61" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="30.59,18.39 44.0,26.13 44.0,41.61 30.59,49.35 17.19,41.61 17.19,26.13" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="-46.15,33.67 -34.38,40.46 -46.15,47.26 -57.91,40.46" fill="url(#cg)"/><polygon points="-34.38,40.46 -46.15,47.26 -46.15,60.84 -34.38,54.05" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="-57.91,40.46 -46.15,47.26 -46.15,60.84 -57.91,54.05" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="-46.15,33.67 -34.38,40.46 -34.38,54.05 -46.15,60.84 -57.91,54.05 -57.91,40.46" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+          <g><polygon points="19.73,59.73 27.59,64.27 19.73,68.81 11.87,64.27" fill="url(#cg)"/><polygon points="27.59,64.27 19.73,68.81 19.73,77.88 27.59,73.34" fill="var(--seed-b)" fill-opacity=".68"/><polygon points="11.87,64.27 19.73,68.81 19.73,77.88 11.87,73.34" fill="var(--seed-b)" fill-opacity=".42"/><polygon points="19.73,59.73 27.59,64.27 27.59,73.34 19.73,77.88 11.87,73.34 11.87,64.27" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".5"/></g>
+        </svg>
+
+        <!-- Stats -->
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num display-sm" data-count="47">0</span>
+            <span class="hud-label ink-dim">Projects<br>delivered</span>
+          </div>
+          <div class="stat-sep" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-num display-sm" data-count="6">0</span>
+            <span class="hud-label ink-dim">Years of<br>experience</span>
+          </div>
+          <div class="stat-sep" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-num display-sm" data-count="28">0</span>
+            <span class="hud-label ink-dim">Happy<br>clients</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="scroll-hint" id="scroll-hint" aria-hidden="true">
+      <span class="hud-label ink-dim">SCROLL</span>
+      <span class="scroll-line"></span>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MARQUEE ════════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <span>Three.js</span><span class="dot">·</span>
+    <span>GSAP</span><span class="dot">·</span>
+    <span>React</span><span class="dot">·</span>
+    <span>Next.js</span><span class="dot">·</span>
+    <span>WebGL</span><span class="dot">·</span>
+    <span>Figma</span><span class="dot">·</span>
+    <span>TypeScript</span><span class="dot">·</span>
+    <span>Blender</span><span class="dot">·</span>
+    <span>Framer</span><span class="dot">·</span>
+    <span>Shader GLSL</span><span class="dot">·</span>
+    <span>Three.js</span><span class="dot">·</span>
+    <span>GSAP</span><span class="dot">·</span>
+    <span>React</span><span class="dot">·</span>
+    <span>Next.js</span><span class="dot">·</span>
+    <span>WebGL</span><span class="dot">·</span>
+    <span>Figma</span><span class="dot">·</span>
+    <span>TypeScript</span><span class="dot">·</span>
+    <span>Blender</span><span class="dot">·</span>
+    <span>Framer</span><span class="dot">·</span>
+    <span>Shader GLSL</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════ WORK ════════════════════════════════ -->
+<section id="work" class="sec">
+  <div class="sec-wash" aria-hidden="true" style="--wx:20%;--wy:30%"></div>
+  <div class="container">
+    <div class="sec-header">
+      <span class="stage-rule h-rule reveal" aria-hidden="true"></span>
+      <div class="sec-header-row">
+        <h2 class="display-sm sec-h reveal-lines">
+          <span class="mask"><span class="line">Selected</span></span>
+          <span class="mask"><span class="line">work.</span></span>
+        </h2>
+        <a href="#contact" class="btn btn-ghost magnetic reveal" style="align-self:flex-end">All projects →</a>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card reveal-card" data-index="01">
+        <div class="project-thumb">
+          <div class="project-thumb-inner">
+            <div class="thumb-placeholder thumb-1"></div>
+            <span class="thumb-label hud-label">View project →</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="hud-label ink-dim project-num">01</span>
+          <h3 class="display-sm project-title">Immersive Brand Experience</h3>
+          <p class="font-mono project-desc">Full-screen WebGL landing page with particle physics and scroll-driven camera movement for a tech startup.</p>
+          <ul class="project-tags">
+            <li class="ptag hud-label">Three.js</li>
+            <li class="ptag hud-label">GSAP</li>
+            <li class="ptag hud-label">WebGL</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project-card reveal-card" data-index="02">
+        <div class="project-thumb">
+          <div class="project-thumb-inner">
+            <div class="thumb-placeholder thumb-2"></div>
+            <span class="thumb-label hud-label">View project →</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="hud-label ink-dim project-num">02</span>
+          <h3 class="display-sm project-title">E-commerce Design System</h3>
+          <p class="font-mono project-desc">Complete Figma design system and React component library for a fashion retailer — 200+ components, dark and light mode.</p>
+          <ul class="project-tags">
+            <li class="ptag hud-label">React</li>
+            <li class="ptag hud-label">Figma</li>
+            <li class="ptag hud-label">Storybook</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project-card reveal-card" data-index="03">
+        <div class="project-thumb">
+          <div class="project-thumb-inner">
+            <div class="thumb-placeholder thumb-3"></div>
+            <span class="thumb-label hud-label">View project →</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="hud-label ink-dim project-num">03</span>
+          <h3 class="display-sm project-title">AI Data Visualization</h3>
+          <p class="font-mono project-desc">Real-time 3D knowledge graph visualization for an AI platform — rendering 50k+ nodes with WebGL instanced rendering.</p>
+          <ul class="project-tags">
+            <li class="ptag hud-label">Three.js</li>
+            <li class="ptag hud-label">D3.js</li>
+            <li class="ptag hud-label">TypeScript</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project-card reveal-card" data-index="04">
+        <div class="project-thumb">
+          <div class="project-thumb-inner">
+            <div class="thumb-placeholder thumb-4"></div>
+            <span class="thumb-label hud-label">View project →</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="hud-label ink-dim project-num">04</span>
+          <h3 class="display-sm project-title">Interactive Portfolio CMS</h3>
+          <p class="font-mono project-desc">Headless CMS-powered portfolio with custom GSAP page transitions, smooth scrolling, and a full blog system.</p>
+          <ul class="project-tags">
+            <li class="ptag hud-label">Next.js</li>
+            <li class="ptag hud-label">Sanity</li>
+            <li class="ptag hud-label">Lenis</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════════════ -->
+<section id="about" class="sec">
+  <div class="sec-wash" aria-hidden="true" style="--wx:75%;--wy:40%"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left">
+        <span class="stage-rule h-rule reveal" aria-hidden="true"></span>
+        <h2 class="display-sm sec-h reveal-lines">
+          <span class="mask"><span class="line">I'm Alex.</span></span>
+          <span class="mask"><span class="line">I build things</span></span>
+          <span class="mask"><span class="line">that move.</span></span>
+        </h2>
+        <div class="about-body font-mono reveal-lines">
+          <span class="mask"><span class="line">Based in New York, I'm a creative developer with</span></span>
+          <span class="mask"><span class="line">six years building interactive web experiences</span></span>
+          <span class="mask"><span class="line">for agencies, startups, and global brands.</span></span>
+        </div>
+        <div class="about-body font-mono reveal-lines" style="margin-top:1.25rem">
+          <span class="mask"><span class="line">I sit at the intersection of design and engineering.</span></span>
+          <span class="mask"><span class="line">I care about performance, accessibility, and making</span></span>
+          <span class="mask"><span class="line">things feel as good as they look.</span></span>
+        </div>
+        <div class="about-body font-mono reveal-lines" style="margin-top:1.25rem">
+          <span class="mask"><span class="line">When I'm not in the browser, I'm in Blender, at the</span></span>
+          <span class="mask"><span class="line">climbing gym, or reading about generative systems.</span></span>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="about-photo-wrap reveal">
+          <div class="about-photo-placeholder">
+            <span class="hud-label ink-dim">PHOTO PLACEHOLDER</span>
+            <div class="photo-orb" aria-hidden="true"></div>
+          </div>
+          <div class="about-photo-meta panel bracketed">
+            <span class="hud-label ink-dim">PROFILE / INFO</span>
+            <dl class="about-dl font-mono">
+              <dt>Location</dt><dd>New York, NY</dd>
+              <dt>Role</dt><dd>Creative Developer</dd>
+              <dt>Education</dt><dd>BSc Computer Science</dd>
+              <dt>Languages</dt><dd>EN, ES, FR</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SKILLS ══════════════════════════════ -->
+<section id="skills" class="sec">
+  <div class="sec-wash" aria-hidden="true" style="--wx:30%;--wy:50%"></div>
+  <div class="container">
+    <span class="stage-rule h-rule reveal" aria-hidden="true"></span>
+    <h2 class="display-sm sec-h reveal-lines">
+      <span class="mask"><span class="line">Tools &amp;</span></span>
+      <span class="mask"><span class="line">capabilities.</span></span>
+    </h2>
+    <div class="skills-grid reveal">
+      <div class="skill-group panel bracketed">
+        <span class="hud-label ink-dim">DEVELOPMENT</span>
+        <ul class="skill-list font-mono">
+          <li class="skill-item"><span class="skill-bar" style="--pct:95%"></span><span>Three.js / WebGL</span><span class="skill-level hud-label">Expert</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:92%"></span><span>React / Next.js</span><span class="skill-level hud-label">Expert</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:90%"></span><span>GSAP + ScrollTrigger</span><span class="skill-level hud-label">Expert</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:85%"></span><span>TypeScript</span><span class="skill-level hud-label">Advanced</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:78%"></span><span>GLSL Shaders</span><span class="skill-level hud-label">Advanced</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:72%"></span><span>Node.js</span><span class="skill-level hud-label">Proficient</span></li>
+        </ul>
+      </div>
+      <div class="skill-group panel bracketed">
+        <span class="hud-label ink-dim">DESIGN</span>
+        <ul class="skill-list font-mono">
+          <li class="skill-item"><span class="skill-bar" style="--pct:96%"></span><span>Figma</span><span class="skill-level hud-label">Expert</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:88%"></span><span>Motion design</span><span class="skill-level hud-label">Advanced</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:82%"></span><span>Blender / 3D</span><span class="skill-level hud-label">Advanced</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:80%"></span><span>Brand identity</span><span class="skill-level hud-label">Advanced</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:75%"></span><span>Typography</span><span class="skill-level hud-label">Proficient</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:70%"></span><span>UI illustration</span><span class="skill-level hud-label">Proficient</span></li>
+        </ul>
+      </div>
+      <div class="skill-group panel bracketed">
+        <span class="hud-label ink-dim">TOOLS &amp; WORKFLOW</span>
+        <ul class="skill-list font-mono">
+          <li class="skill-item"><span class="skill-bar" style="--pct:94%"></span><span>VS Code</span><span class="skill-level hud-label">Expert</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:88%"></span><span>Git / GitHub</span><span class="skill-level hud-label">Advanced</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:85%"></span><span>Vercel / Netlify</span><span class="skill-level hud-label">Advanced</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:80%"></span><span>Framer</span><span class="skill-level hud-label">Advanced</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:74%"></span><span>Sanity CMS</span><span class="skill-level hud-label">Proficient</span></li>
+          <li class="skill-item"><span class="skill-bar" style="--pct:68%"></span><span>Webflow</span><span class="skill-level hud-label">Proficient</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROCESS ═════════════════════════════ -->
+<section id="process" class="sec">
+  <div class="sec-wash" aria-hidden="true" style="--wx:60%;--wy:20%"></div>
+  <div class="container">
+    <span class="stage-rule h-rule reveal" aria-hidden="true"></span>
+    <h2 class="display-sm sec-h reveal-lines">
+      <span class="mask"><span class="line">How I work,</span></span>
+      <span class="mask"><span class="line">start to finish.</span></span>
+    </h2>
+    <p class="body-text font-mono reveal-lines">
+      <span class="mask"><span class="line">Every project follows this sequence. Each step feeds the next.</span></span>
+      <span class="mask"><span class="line">Nothing ships without passing through all of them.</span></span>
+    </p>
+
+    <ol class="process-steps">
+      <li class="process-step reveal-card">
+        <div class="process-num panel bracketed"><span class="display-sm">01</span></div>
+        <div class="process-body">
+          <h3 class="display-sm process-title">Discovery</h3>
+          <p class="font-mono process-desc">I start by learning your business, your users, and your goals. I ask uncomfortable questions. I read your competitors' sites. I form a point of view before I open Figma.</p>
+          <ul class="process-tags">
+            <li class="ptag hud-label">Stakeholder interviews</li>
+            <li class="ptag hud-label">Competitive audit</li>
+            <li class="ptag hud-label">User research</li>
+          </ul>
+        </div>
+      </li>
+      <li class="process-step reveal-card">
+        <div class="process-num panel bracketed"><span class="display-sm">02</span></div>
+        <div class="process-body">
+          <h3 class="display-sm process-title">Direction</h3>
+          <p class="font-mono process-desc">I produce two or three divergent creative directions — moodboards, type pairings, motion references. We align on one direction before any pixel is placed.</p>
+          <ul class="process-tags">
+            <li class="ptag hud-label">Moodboards</li>
+            <li class="ptag hud-label">Art direction</li>
+            <li class="ptag hud-label">Motion language</li>
+          </ul>
+        </div>
+      </li>
+      <li class="process-step reveal-card">
+        <div class="process-num panel bracketed"><span class="display-sm">03</span></div>
+        <div class="process-body">
+          <h3 class="display-sm process-title">Design</h3>
+          <p class="font-mono process-desc">High-fidelity Figma designs with interactive prototypes. Responsive at every breakpoint. Every state defined — hover, focus, empty, error, loading.</p>
+          <ul class="process-tags">
+            <li class="ptag hud-label">UI design</li>
+            <li class="ptag hud-label">Prototyping</li>
+            <li class="ptag hud-label">Design system</li>
+          </ul>
+        </div>
+      </li>
+      <li class="process-step reveal-card">
+        <div class="process-num panel bracketed"><span class="display-sm">04</span></div>
+        <div class="process-body">
+          <h3 class="display-sm process-title">Development</h3>
+          <p class="font-mono process-desc">Production-quality code. Semantic HTML, optimised assets, smooth animations, accessible interactions. I write it as if it will run for ten years — because it usually does.</p>
+          <ul class="process-tags">
+            <li class="ptag hud-label">React / Next.js</li>
+            <li class="ptag hud-label">GSAP + WebGL</li>
+            <li class="ptag hud-label">Performance</li>
+          </ul>
+        </div>
+      </li>
+      <li class="process-step reveal-card">
+        <div class="process-num panel bracketed"><span class="display-sm">05</span></div>
+        <div class="process-body">
+          <h3 class="display-sm process-title">Launch</h3>
+          <p class="font-mono process-desc">I handle deployment, configure analytics, run Lighthouse audits, and train your team on the CMS. I don't disappear after handoff — I offer ongoing retainers for clients who want them.</p>
+          <ul class="process-tags">
+            <li class="ptag hud-label">Deployment</li>
+            <li class="ptag hud-label">Analytics</li>
+            <li class="ptag hud-label">Retainer option</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SERVICES ════════════════════════════ -->
+<section id="services" class="sec">
+  <div class="sec-wash" aria-hidden="true" style="--wx:40%;--wy:60%"></div>
+  <div class="container">
+    <span class="stage-rule h-rule reveal" aria-hidden="true"></span>
+    <h2 class="display-sm sec-h reveal-lines">
+      <span class="mask"><span class="line">What I</span></span>
+      <span class="mask"><span class="line">offer.</span></span>
+    </h2>
+    <div class="services-grid reveal">
+      <div class="service-card panel bracketed">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="10" height="10" stroke="var(--seed-a)" stroke-width="1.5"/><rect x="18" y="4" width="10" height="10" stroke="var(--ink-dim)" stroke-width="1.5"/><rect x="4" y="18" width="10" height="10" stroke="var(--ink-dim)" stroke-width="1.5"/><rect x="18" y="18" width="10" height="10" stroke="var(--seed-a)" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="display-sm service-title">Web Development</h3>
+        <p class="font-mono service-desc">Custom websites, web apps, and interactive experiences built with modern frameworks and obsessive attention to performance.</p>
+        <p class="font-mono service-price">From <span style="color:var(--ink)">$8,000</span></p>
+      </div>
+      <div class="service-card panel bracketed">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="var(--seed-a)" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="var(--seed-a)" fill-opacity=".3"/><line x1="16" y1="6" x2="16" y2="1" stroke="var(--ink-dim)" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="display-sm service-title">3D &amp; WebGL</h3>
+        <p class="font-mono service-desc">Immersive three-dimensional experiences, particle systems, custom shaders, and real-time 3D that runs at 60fps in the browser.</p>
+        <p class="font-mono service-price">From <span style="color:var(--ink)">$12,000</span></p>
+      </div>
+      <div class="service-card panel bracketed">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 16 L16 4 L28 16 L16 28 Z" stroke="var(--seed-a)" stroke-width="1.5" fill="none"/><path d="M10 16 L16 10 L22 16 L16 22 Z" stroke="var(--ink-dim)" stroke-width="1.5" fill="none"/></svg>
+        </div>
+        <h3 class="display-sm service-title">UI/UX Design</h3>
+        <p class="font-mono service-desc">End-to-end product design — from user research and wireframes through to polished high-fidelity designs and design systems.</p>
+        <p class="font-mono service-price">From <span style="color:var(--ink)">$5,000</span></p>
+      </div>
+      <div class="service-card panel bracketed">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><polyline points="4,22 10,14 16,18 22,10 28,14" stroke="var(--seed-a)" stroke-width="1.5" fill="none"/><circle cx="4" cy="22" r="2" fill="var(--seed-a)"/><circle cx="28" cy="14" r="2" fill="var(--seed-a)"/></svg>
+        </div>
+        <h3 class="display-sm service-title">Motion &amp; Animation</h3>
+        <p class="font-mono service-desc">Scroll animations, page transitions, micro-interactions, and full motion design systems — GSAP, Framer Motion, Lottie.</p>
+        <p class="font-mono service-price">From <span style="color:var(--ink)">$4,000</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CONTACT ══════════════════════════════ -->
+<section id="contact" class="sec sec-contact">
+  <div class="sec-wash" aria-hidden="true" style="--wx:50%;--wy:50%"></div>
+  <div class="container">
+    <span class="stage-rule h-rule reveal" aria-hidden="true"></span>
+
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h2 class="display contact-heading reveal-lines" id="contact-h">
+          <span class="mask"><span class="line">Let's build</span></span>
+          <span class="mask"><span class="line">something</span></span>
+          <span class="mask open-line">great.</span>
+        </h2>
+        <p class="body-text font-mono reveal-lines" style="margin-top:2rem">
+          <span class="mask"><span class="line">I'm currently available for new projects. If you have</span></span>
+          <span class="mask"><span class="line">something interesting, I'd love to hear about it.</span></span>
+        </p>
+        <div class="contact-links reveal">
+          <a href="mailto:hello@alexmercer.dev" class="contact-link font-mono magnetic">
+            <span class="hud-label ink-dim">EMAIL</span>
+            hello@alexmercer.dev
+          </a>
+          <a href="https://twitter.com/placeholder" class="contact-link font-mono magnetic">
+            <span class="hud-label ink-dim">TWITTER</span>
+            @alexmercer
+          </a>
+          <a href="https://linkedin.com/placeholder" class="contact-link font-mono magnetic">
+            <span class="hud-label ink-dim">LINKEDIN</span>
+            linkedin.com/in/alexmercer
+          </a>
+          <a href="https://github.com/placeholder" class="contact-link font-mono magnetic">
+            <span class="hud-label ink-dim">GITHUB</span>
+            github.com/alexmercer
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right reveal">
+        <form class="contact-form panel bracketed" id="contact-form">
+          <span class="hud-label ink-dim" style="margin-bottom:1.5rem;display:block">SEND A MESSAGE</span>
+          <div class="form-row">
+            <label class="form-label hud-label" for="f-name">Name</label>
+            <input class="form-input font-mono" id="f-name" type="text" placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label class="form-label hud-label" for="f-email">Email</label>
+            <input class="form-input font-mono" id="f-email" type="email" placeholder="your@email.com" autocomplete="email">
+          </div>
+          <div class="form-row">
+            <label class="form-label hud-label" for="f-project">Project type</label>
+            <select class="form-input font-mono" id="f-project">
+              <option value="">Select one</option>
+              <option>Web development</option>
+              <option>3D / WebGL</option>
+              <option>UI/UX Design</option>
+              <option>Motion design</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="form-label hud-label" for="f-budget">Budget range</label>
+            <select class="form-input font-mono" id="f-budget">
+              <option value="">Select range</option>
+              <option>Under $5,000</option>
+              <option>$5,000 – $15,000</option>
+              <option>$15,000 – $40,000</option>
+              <option>$40,000+</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="form-label hud-label" for="f-msg">Message</label>
+            <textarea class="form-input form-textarea font-mono" id="f-msg" placeholder="Tell me about your project…" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit magnetic">Send message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="hud-label ink-dim">ALEX MERCER © 2026</span>
+    <span class="hud-label ink-dim">CREATIVE DEVELOPER · NEW YORK</span>
+    <span class="hud-label ink-dim">DESIGNED &amp; BUILT IN-HOUSE</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
